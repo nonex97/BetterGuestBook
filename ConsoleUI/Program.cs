@@ -13,9 +13,21 @@ namespace ConsoleUI
 {
     internal class Program
     {
+        // has to be outside of Main since it wouldn't be accessible by the Get/Print guest information
+        private static List<GuestModel> guests = new List<GuestModel>(); // this will hold all of the guests (can be one or more guests)
+
         static void Main(string[] args)
         {
-            List<GuestModel> guests = new List<GuestModel>(); // this will hold all of the guests (can be one or more guests)
+            
+            GetGuestInformation();
+
+            PrintGuestInformation();
+
+            Console.ReadLine();
+        }
+
+        private static void GetGuestInformation()
+        {
             string moreGuestsComing = "";
 
             do
@@ -43,13 +55,14 @@ namespace ConsoleUI
                 Console.Clear();
             }
             while (moreGuestsComing.ToLower() == "yes");
+        }
 
+        private static void PrintGuestInformation()
+        {
             foreach (GuestModel guest in guests)
             {
                 Console.WriteLine(guest.GuestInfo);
             }
-
-            Console.ReadLine();
         }
     }
 }
