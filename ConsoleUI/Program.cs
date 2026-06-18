@@ -33,28 +33,27 @@ namespace ConsoleUI
             do
             {
                 GuestModel guest = new GuestModel(); // holds one guest
-
-                Console.Write("What is your first name: ");
-                guest.FirstName = Console.ReadLine();
-
-                // Assuming that name given is correct
-
-                Console.Write("What is your last name: ");
-                guest.LastName = Console.ReadLine();
-
-                // Same assumption
-
-                Console.Write("What is your message to the host: ");
-                guest.MessageToHost = Console.ReadLine();
-
-                Console.Write("Are more guests coming (yes/no): ");
-                moreGuestsComing = Console.ReadLine();
+                
+                guest.FirstName = GetInfoFromConsole("What is your first name: ");                
+                guest.LastName = GetInfoFromConsole("What is your last name: ");                
+                guest.MessageToHost = GetInfoFromConsole("What is your message to the host: ");                
+                moreGuestsComing = GetInfoFromConsole("Are more guests coming (yes/no): ");
 
                 guests.Add(guest); // add the guest to the guests list
 
                 Console.Clear();
             }
             while (moreGuestsComing.ToLower() == "yes");
+        }
+
+        private static string GetInfoFromConsole(string message)
+        {
+            string output = "";
+
+            Console.WriteLine(message);
+            output = Console.ReadLine();
+
+            return output;
         }
 
         private static void PrintGuestInformation()
