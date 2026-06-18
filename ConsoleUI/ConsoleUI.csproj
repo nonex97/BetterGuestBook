@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GuestBookLibrary\GuestBookLibrary.csproj">
+      <Project>{c7b96a07-300c-4089-b222-aad6db503821}</Project>
+      <Name>GuestBookLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GuestBookLibrary.Models;
 
 // Capture the information about each guest
 // Info to capture: First name, last name, message to the host
